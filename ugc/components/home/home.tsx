@@ -39,7 +39,7 @@ const arr = [
   }
 ];
 
-function HomePage() {
+function HomePage({ images }: { images: Image}) {
     const [imageUrls, setImageUrls] = useState<string[]>([]);
     const imageInputRef = useRef<HTMLInputElement>(null);
     const [searchTerm, setSearchTerm] = React.useState("");
@@ -54,21 +54,21 @@ function HomePage() {
                 <input
                 type="text"
                 className="w-full bg-transparent items-center placeholder:text-slate-400 text-white text-sm border-b-2 sm:border-b-3 pb-2 sm:pb-3 border-[#D600E1] rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-                placeholder="Search for a product..."
+                placeholder="Search for a image..."
                 onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 </div>
             </div>
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {/* {imageUrls.map(data) => (
-              <Image
-                key={data}
-                src={data}
-                width={300}
-                height={300}
-                alt={`img-${data.id}`}
-              />
-            ))} */}
+          {/* {images.map((image) => (
+            <Image
+            alt={images.id}
+            src={images.file_url}
+            style={{ objectFit: 'cover' }}
+            width={400}
+            height={320}
+            />
+          ))} */}
         </div>
         </div>
       );
