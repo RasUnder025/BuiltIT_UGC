@@ -39,7 +39,7 @@ const arr = [
   }
 ];
 
-function HomePage({ images }: { images: Image}) {
+function HomePage() {
     const [imageUrls, setImageUrls] = useState<string[]>([]);
     const imageInputRef = useRef<HTMLInputElement>(null);
     const [searchTerm, setSearchTerm] = React.useState("");
